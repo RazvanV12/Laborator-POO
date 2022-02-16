@@ -1,6 +1,10 @@
 #include <iostream>
 
-int main() {
-    std::cout << "Hello, world!\n";
+int main()
+{
+    using namespace std;
+    int a, b;
+    cin>>a>>b;
+    cout<<a+b;
     return 0;
 }
