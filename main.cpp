@@ -9,7 +9,6 @@ class Vector
 private:
     int n;
     vector<int> v;
-    int x;
 public:
     int getN()
     {
@@ -19,10 +18,6 @@ public:
     {
         return v;
     }
-    int getX()
-    {
-        return x;
-    }
     void setN(int n_)
     {
         n = n_;
@@ -31,17 +26,12 @@ public:
     {
         v = v_;
     }
-    void setX(int x_)
-    {
-        x = x_;
-    }
     Vector(int n_, vector<int> v_, int x_)
     {
         this->n = n_;
         this->v = v_;
-        this->x = x_;
         for( int i=0 ; i<n; i++)
-            v.push_back(x);
+            v.push_back(x_);
     }
 
     Vector( Vector &obj)
