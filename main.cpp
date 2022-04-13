@@ -44,6 +44,15 @@ int lunaNumber (char *luna){
     return 0;
 }
 
+class MyOutOfBoundsException : public exception{
+public:
+    MyOutOfBoundsException() = default;
+
+    const char* what() const noexcept override{
+        return "Angajat permanent sau part-time?";
+    }
+};
+
 class Data{
 private:
     int zi;
@@ -194,6 +203,7 @@ public:
         return is;
     }
     virtual int CalculPrima(){
+        throw MyOutOfBoundsException();
     };
 };
 
@@ -329,5 +339,11 @@ int main() {
     //cout << a1 << endl;
     //cout << b1 << endl;
     //cout << p1 << endl;
+    /*try{
+        a1.CalculPrima();
+    }
+    catch (const MyOutOfBoundsException &e){
+        cout << e.what() << endl;
+    }*/
     return 0;
 }
